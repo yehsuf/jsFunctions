@@ -1,19 +1,20 @@
 "use strict";
+
 function isLetter(char) {
     let charIndex = char.toUpperCase().charCodeAt();
-    if(charIndex >= "A".charCodeAt() && charIndex <= "Z".charCodeAt()){
+    if (charIndex >= "A".charCodeAt() && charIndex <= "Z".charCodeAt()) {
         return true;
-    }    
+    }
 }
 
 function isUpper(char) {
-    if(isLetter(char) && (char.toUpperCase() === char)){
+    if (isLetter(char) && (char.toUpperCase() === char)) {
         return true;
     }
 }
 
 function isLower(char) {
-    if(isLetter(char) && (char.toLowerCase() === char)){
+    if (isLetter(char) && (char.toLowerCase() === char)) {
         return true;
     }
 }
@@ -26,11 +27,11 @@ function isStrongPassword(password) {
     if (password.length < 7)
         return false;
     for (let ch of password) {
-        if(isUpper(ch))
+        if (isUpper(ch))
             hasUpper = true;
-        else if(isLower(ch))
+        else if (isLower(ch))
             hasLower = true;
-        else if(!isNaN(ch))
+        else if (!isNaN(ch))
             hasNumber = true;
         else
             hasOther = true;
@@ -39,5 +40,5 @@ function isStrongPassword(password) {
 has lower = ${hasLower}
 has number = ${hasNumber}
 has other = ${hasOther}`)
-    return(hasUpper && hasLower && hasNumber && hasOther )
+    return (hasUpper && hasLower && hasNumber && hasOther)
 }
