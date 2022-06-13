@@ -36,9 +36,9 @@ function isStrongPassword(password) {
         else
             hasOther = true;
     }
-    console.log(`has upper = ${hasUpper}
+    /*    console.log(`has upper = ${hasUpper} //check what is missing
 has lower = ${hasLower}
 has number = ${hasNumber}
-has other = ${hasOther}`)
+has other = ${hasOther}`) */
     return (hasUpper && hasLower && hasNumber && hasOther)
 }
